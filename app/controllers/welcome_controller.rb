@@ -8,21 +8,16 @@ class WelcomeController < ApplicationController
   def index
   	  # 読み込み時に一度パースが必要
 	  json_request = JSON.parse(request.body.read)
-      #name = json_request["name"]
+	  
+      if !json_request.blank?
+      	personal = json_request
+      else
+      	personal = {'status' => 500}
+      end
 
-      #response_json = {user_id: "new user"}.to_json
-      render text: 'json_request'
+      render :json => personal
       
       
-      
-      
-	  # パース後のデータを表示
-	  #p "json_request => #{json_request}"
-	  #p "#{json_request.to_hash}"
-
-	  # 各要素へのアクセス方法
-	  #p "data => #{json_request["data"]}"
-	  #p "data.type => #{json_request["data"]["type"]}"
   end
 
 end
