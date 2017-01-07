@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
   # GET /welcome
   def index
   	  # 読み込み時に一度パースが必要
-	  json_request = JSON.parse(request.body.read)
+	  #json_request = JSON.parse(request.body.read)
 
 	  # パース後のデータを表示
 	  #p "json_request => #{json_request}"
