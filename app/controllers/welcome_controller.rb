@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
 
   # GET /welcome
   def index
-  	  #render :text => params[:data]
+  	  render :text: request.headers['User-Agent']
   	  
   end
 
