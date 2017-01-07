@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
       #name = json_request["name"]
 
       #response_json = {user_id: "new user"}.to_json
-      render text: json_request
+      render text: 'json_request'
       
       
       
