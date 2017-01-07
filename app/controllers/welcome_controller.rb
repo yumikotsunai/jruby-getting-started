@@ -7,11 +7,11 @@ class WelcomeController < ApplicationController
   # GET /welcome
   def index
   	  # 読み込み時に一度パースが必要
-	  #json_request = JSON.parse(request.body.read)
+	  json_request = JSON.parse(request.body.read)
       #name = json_request["name"]
 
       #response_json = {user_id: "new user"}.to_json
-      render json: request.body.read
+      render text: json_request
       
       
       
