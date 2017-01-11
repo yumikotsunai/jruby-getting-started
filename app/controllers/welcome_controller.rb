@@ -11,9 +11,13 @@ class WelcomeController < ApplicationController
   	  # 読み込み時に一度パースが必要
 	  #json_request = JSON.parse(request.body.read)
 	  
-	  #print(request["data"]);
+	  
 	  print(1);
-	  print(request.dig("data", "type", 0));
+	  print(request["data"]);
+	  print(2);
+	  data = request["data"];
+	  print(data["type"]);
+	  
 	  #print(request["data"]["type"]);
 	  #print(request["data"]["attributes"]);
 	  
