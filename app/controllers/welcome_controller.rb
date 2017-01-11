@@ -12,6 +12,8 @@ class WelcomeController < ApplicationController
 	  #json_request = JSON.parse(request.body.read)
 	  
 	  print(request["data"]);
+	  print(request["data"]["type"]);
+	  print(request["data"]["attributes"]);
 	  
 	  @info = request["data"]
       
