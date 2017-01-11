@@ -10,8 +10,11 @@ class WelcomeController < ApplicationController
   # GET /welcome
   def index
   	  # 読み込み時に一度パースが必要
-  	  render :text => request.body.read
 	  #json_request = JSON.parse(request.body.read)
+	  print("1");
+	  print(request.body.read);
+	  print("2");
+	  print(request["data"]);
 	  
 	  #logインスタンス生成 ⇒これは効いていないよう
   	  #log = Logger.new('C:\Users\tsunai\Documents\WebHook\jruby-getting-started\log\debug.log')
