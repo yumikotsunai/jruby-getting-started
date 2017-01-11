@@ -11,8 +11,8 @@ class WelcomeController < ApplicationController
   def index
   	  # 読み込み時に一度パースが必要
 	  #json_request = JSON.parse(request.body.read)
-	  print("1");
-	  print(request.body.read);
+	  #print("1");
+	  #print(request.body.read);
 	  print("2");
 	  print(request["data"]);
 	  
