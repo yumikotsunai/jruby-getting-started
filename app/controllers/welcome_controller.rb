@@ -17,7 +17,7 @@ class WelcomeController < ApplicationController
 	  print(2);
 	  data = request["data"];
 	  print(data["type"]);
-	  render :text => "#{data["type"]}"
+	  #render :text => "#{data["type"]}"
 	  
 	  #print(request["data"]["type"]);
 	  #print(request["data"]["attributes"]);
