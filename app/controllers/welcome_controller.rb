@@ -59,7 +59,7 @@ class WelcomeController < ApplicationController
 		  render :text => data
 		  #render :text => 'ソース : ' + source
 		  
-		  @event = 'イベント : ' + data
+		  #@event = 'イベント : ' + data
 	  else
 	  	  #@event = 'イベント : '
 	  	  render :text => 'イベント : ' 
