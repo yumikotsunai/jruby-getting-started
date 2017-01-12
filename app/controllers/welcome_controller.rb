@@ -54,12 +54,9 @@ class WelcomeController < ApplicationController
 	  puts(nself);
 	  puts(publisher);
 	  
-	  #render :text => "#{data["type"]}"
+	  render :text => 'イベント'
 	  
-	  #print(request["data"]["type"]);
-	  #print(request["data"]["attributes"]);
-	  
-	  #@info = request["data"]
+	  @event = data
       
   end
 
