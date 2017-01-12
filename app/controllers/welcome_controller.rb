@@ -61,7 +61,9 @@ class WelcomeController < ApplicationController
 		  	  e = "その他"
 		  end
 		  
-		  render :text => 'イベント : ' + e
+		  puts('イベント : ' + e);
+		  
+		  #render :text => 'イベント : ' + e
 		  #render :text => 'ソース : ' + source
 		  
 		  #@event = 'イベント : ' + data
