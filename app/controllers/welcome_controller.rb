@@ -13,10 +13,10 @@ class WelcomeController < ApplicationController
 	  
 	  if !request.body.read.blank?
 	  
-		  #data = request["data"];
-		  data = request[:data];
-		  #type = data["type"];
-		  type = data[:type];
+		  data = request["data"];
+		  #data = request[:data];
+		  type = data["type"];
+		  #type = data[:type];
 		  
 		  #attributes = data["attributes"];
 		  #source = attributes["source"];
@@ -38,7 +38,7 @@ class WelcomeController < ApplicationController
 		  
 		  
 		  puts(data);
-		  #puts(type);
+		  puts(type);
 		  #puts(attributes);
 		  #puts(source);
 		  #puts(status);
@@ -55,8 +55,13 @@ class WelcomeController < ApplicationController
 		  #puts(nself);
 		  #puts(publisher);
 		  
+		  if type == "locked_event"
+		  	  e = "ロック"
+		  else
+		  	  e = "その他"
+		  end
 		  
-		  render :text => data
+		  render :text => 'イベント : ' + e
 		  #render :text => 'ソース : ' + source
 		  
 		  #@event = 'イベント : ' + data
