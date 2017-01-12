@@ -56,12 +56,13 @@ class WelcomeController < ApplicationController
 		  #puts(publisher);
 		  
 		  
-		  #render :text => 'イベント : ' + data
+		  render :text => 'イベント : ' + data
 		  #render :text => 'ソース : ' + source
 		  
 		  @event = 'イベント : ' + data
 	  else
-	  	  @event = 'イベント : '
+	  	  #@event = 'イベント : '
+	  	  render :text => 'イベント : ' 
 	  	  
 	  end
 	  
