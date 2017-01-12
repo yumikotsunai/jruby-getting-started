@@ -37,6 +37,22 @@ class WelcomeController < ApplicationController
 	  publisher = links["publisher"];
 	  
 	  puts(data);
+	  puts(type);
+	  puts(attributes);
+	  puts(source);
+	  puts(status);
+	  puts(time_zone);
+	  puts(occurred_at);
+	  puts(created_at);
+	  puts(updated_at);
+	  puts(nmethod);
+	  puts(publisher_id);
+	  puts(publisher_type);
+	  puts(source);
+	  puts(nid);
+	  puts(links);
+	  puts(nself);
+	  puts(publisher);
 	  
 	  #render :text => "#{data["type"]}"
 	  
