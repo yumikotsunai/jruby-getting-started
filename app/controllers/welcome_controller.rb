@@ -59,9 +59,9 @@ class WelcomeController < ApplicationController
 	  else
 	  end
 	  
-	  render :text => "イベント : ¥n ソース : "
+	  #render :text => "イベント : ¥n ソース : "
 	  
-	  @event = data
+	  @event = 'イベント : ' + data
       
   end
 
