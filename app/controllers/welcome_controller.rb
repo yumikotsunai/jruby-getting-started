@@ -17,6 +17,7 @@ class WelcomeController < ApplicationController
 	      header1 = response.headers
 	      header2 = response.headers['Content-Type']
 	      header3 = response.headers['X-Secret']
+	      header4 = response.headers['X-Content-Type-Options']
 	      
 	      #JSONのオリジナル取得
 	      #json_request = response.raw_post
@@ -28,6 +29,7 @@ class WelcomeController < ApplicationController
 		  puts(header1);
 		  puts(header2);
 		  puts(header3);
+		  puts(header4);
 		  #puts("JSONオリジナル");
 		  #puts(json_request);
 		  #puts("FORMオリジナル");
