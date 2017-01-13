@@ -19,19 +19,19 @@ class WelcomeController < ApplicationController
 	      header3 = response.headers['X-Secret']
 	      
 	      #JSONのオリジナル取得
-	      json_request = response.raw_post
+	      #json_request = response.raw_post
 	      
 	      #FORMのオリジナル取得
-	      form_request = response.raw_post
+	      #form_request = response.raw_post
 	      
 		  puts("ヘッダ");
 		  puts(header1);
 		  puts(header2);
 		  puts(header3);
-		  puts("JSONオリジナル");
-		  puts(json_request);
-		  puts("FORMオリジナル");
-		  puts(form_request);
+		  #puts("JSONオリジナル");
+		  #puts(json_request);
+		  #puts("FORMオリジナル");
+		  #puts(form_request);
 	      
 	      
 	      #Parameters取得
