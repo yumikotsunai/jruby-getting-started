@@ -13,8 +13,28 @@ class WelcomeController < ApplicationController
 	  
 	  if !request.body.read.blank?
 	      
-	      headers = request.headers['content_type']
-	      json_request = request.raw_post
+	      #ヘッダ取得
+	      header1 = response.headers
+	      header2 = response.headers['Content-Type']
+	      header3 = response.headers['X-Secret']
+	      
+	      #JSONのオリジナル取得
+	      json_request = response.raw_post
+	      
+	      #FORMのオリジナル取得
+	      form_request = response.raw_post
+	      
+		  puts("ヘッダ");
+		  puts(header1);
+		  puts(header2);
+		  puts(header3);
+		  puts("JSONオリジナル");
+		  puts(json_request);
+		  puts("FORMオリジナル");
+		  puts(form_request);
+	      
+	      
+	      #Parameters取得
 		  data = request["data"];
 		  #data = request[:data];
 		  type = data["type"];
@@ -38,12 +58,9 @@ class WelcomeController < ApplicationController
 		  #nself = links["self"];
 		  #publisher = links["publisher"];
 		  
-		  puts("HEAD");
-		  puts(headers);
-		  puts("2");
-		  puts(json_request);
-		  puts(data);
-		  puts(type);
+		  
+		  #puts(data);
+		  #puts(type);
 		  #puts(attributes);
 		  #puts(source);
 		  #puts(status);
@@ -66,22 +83,16 @@ class WelcomeController < ApplicationController
 		  	  e = "その他"
 		  end
 		  
-		  puts('イベント : ' + e);
+		  #puts('イベント : ' + e);
 		  
-		  #render :text => 'イベント : ' + e
-		  #render :text => 'ソース : ' + source
 		  
-		  #@event = 'イベント : ' + data
 	  else
 	  	  #@event = 'イベント : '
 	  	  render :text => 'イベント : ' 
 	  	  
 	  end
 	  
-	  #render :text => "イベント : ¥n ソース : "
 	  
-	  
-      
   end
 
 end
