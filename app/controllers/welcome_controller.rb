@@ -12,7 +12,8 @@ class WelcomeController < ApplicationController
 	  #json_request = JSON.parse(request.body.read)
 	  
 	  if !request.body.read.blank?
-	  
+	      
+	      headers = request.headers
 	      json_request = request.raw_post
 		  data = request["data"];
 		  #data = request[:data];
@@ -37,6 +38,9 @@ class WelcomeController < ApplicationController
 		  #nself = links["self"];
 		  #publisher = links["publisher"];
 		  
+		  puts("HEAD");
+		  puts(headers);
+		  puts("2");
 		  puts(json_request);
 		  puts(data);
 		  puts(type);
