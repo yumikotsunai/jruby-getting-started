@@ -13,6 +13,7 @@ class WelcomeController < ApplicationController
 	  
 	  if !request.body.read.blank?
 	  
+	      json_request = request.raw_post
 		  data = request["data"];
 		  #data = request[:data];
 		  type = data["type"];
@@ -36,7 +37,7 @@ class WelcomeController < ApplicationController
 		  #nself = links["self"];
 		  #publisher = links["publisher"];
 		  
-		  
+		  puts(json_request);
 		  puts(data);
 		  puts(type);
 		  #puts(attributes);
