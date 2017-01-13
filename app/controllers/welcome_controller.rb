@@ -20,8 +20,9 @@ class WelcomeController < ApplicationController
 	      header4 = response.headers['X-Content-Type-Options']
 	      
 	      #JSONのオリジナル取得
-	      json_request = response.raw_post
+	      #json_request = response.headers['raw_post']
 	      json_request2 = request.raw_post
+	      json_request3 = response.headers['raw_post']
 	      
 	      #FORMのオリジナル取得
 	      form_request = response.raw_post
@@ -33,8 +34,9 @@ class WelcomeController < ApplicationController
 		  puts(header3);
 		  puts(header4);
 		  puts("JSONオリジナル");
-		  puts(json_request);
+		  #puts(json_request);
 		  puts(json_request2);
+		  puts(json_request3);
 		  puts("FORMオリジナル");
 		  puts(form_request);
 	      puts(form_request2);
