@@ -25,8 +25,8 @@ class WelcomeController < ApplicationController
 	      json_request3 = response.headers['raw_post']
 	      
 	      #FORMのオリジナル取得
-	      form_request = response.raw_post
-	      form_request2 = request.raw_post
+	      #form_request = response.raw_post
+	      #form_request2 = request.raw_post
 	      
 		  puts("ヘッダ");
 		  puts(header1);
@@ -37,9 +37,9 @@ class WelcomeController < ApplicationController
 		  #puts(json_request);
 		  puts(json_request2);
 		  puts(json_request3);
-		  puts("FORMオリジナル");
-		  puts(form_request);
-	      puts(form_request2);
+		  #puts("FORMオリジナル");
+		  #puts(form_request);
+	      #puts(form_request2);
 	      
 	      #Parameters取得
 		  data = request["data"];
