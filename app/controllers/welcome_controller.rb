@@ -20,21 +20,24 @@ class WelcomeController < ApplicationController
 	      header4 = response.headers['X-Content-Type-Options']
 	      
 	      #JSONのオリジナル取得
-	      #json_request = response.raw_post
+	      json_request = response.raw_post
+	      json_request2 = request.raw_post
 	      
 	      #FORMのオリジナル取得
-	      #form_request = response.raw_post
+	      form_request = response.raw_post
+	      form_request2 = request.raw_post
 	      
 		  puts("ヘッダ");
 		  puts(header1);
 		  puts(header2);
 		  puts(header3);
 		  puts(header4);
-		  #puts("JSONオリジナル");
-		  #puts(json_request);
-		  #puts("FORMオリジナル");
-		  #puts(form_request);
-	      
+		  puts("JSONオリジナル");
+		  puts(json_request);
+		  puts(json_request2);
+		  puts("FORMオリジナル");
+		  puts(form_request);
+	      puts(form_request2);
 	      
 	      #Parameters取得
 		  data = request["data"];
