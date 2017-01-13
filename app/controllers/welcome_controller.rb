@@ -13,7 +13,7 @@ class WelcomeController < ApplicationController
 	  
 	  if !request.body.read.blank?
 	      
-	      headers = request.headers
+	      headers = request.headers['content_type']
 	      json_request = request.raw_post
 		  data = request["data"];
 		  #data = request[:data];
