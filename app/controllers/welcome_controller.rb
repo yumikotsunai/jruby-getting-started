@@ -39,6 +39,10 @@ class WelcomeController < ApplicationController
 		  puts(header5);
 		  puts(header6);
 		  puts(header7);
+		  
+		  puts("エラー");
+		  raise response.headers['X-Secret'].inspect
+		  
 		  puts("JSONオリジナル");
 		  #puts(json_request);
 		  puts(json_request2);
