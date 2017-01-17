@@ -18,7 +18,9 @@ class WelcomeController < ApplicationController
 	      header2 = response.headers['Content-Type']
 	      header3 = response.headers['X-Secret']
 	      header4 = response.headers['X-Content-Type-Options']
-	      header5 = response.headers['X-Secret'].inspect
+	      header5 = response.headers['Content-Type'].inspect
+	      header6 = response.headers['X-Secret'].inspect
+	      header7 = response.headers['X-Content-Type-Options'].inspect
 	      
 	      #JSONのオリジナル取得
 	      #json_request = response.headers['raw_post']
@@ -35,6 +37,8 @@ class WelcomeController < ApplicationController
 		  puts(header3);
 		  puts(header4);
 		  puts(header5);
+		  puts(header6);
+		  puts(header7);
 		  puts("JSONオリジナル");
 		  #puts(json_request);
 		  puts(json_request2);
