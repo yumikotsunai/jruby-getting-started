@@ -17,7 +17,7 @@ class WelcomeController < ApplicationController
 	  if !request.body.read.blank?
 	      
 	      puts('googleテスト2')
-          #puts(JSON.parse(open(uri).read))
+          puts(JSON.parse(open(uri).read))
   	      
 	      #ヘッダ取得
 	      #header1 = response.headers
