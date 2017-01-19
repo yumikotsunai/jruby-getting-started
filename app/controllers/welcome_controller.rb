@@ -108,7 +108,8 @@ class WelcomeController < ApplicationController
 		  
 	  else
 	  	  #@event = 'イベント : '
-	  	  render :text => 'イベント : ' 
+	  	  #render :text => 'イベント : ' 
+	  	  render
 	  	  
 	  end
 	  
