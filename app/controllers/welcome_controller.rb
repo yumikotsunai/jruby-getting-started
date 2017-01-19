@@ -13,13 +13,13 @@ class WelcomeController < ApplicationController
   	  
   	  apikey = 'AIzaSyANPVaEQ0I4erpjEzzcJFMHG8-EcABMoao'
   	  calendarId = 'kke.co.jp_jh10o5p06igc6toeq8rerrbde8@group.calendar.google.com'
-  	  
   	  uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events?orderBy=startTime&singleEvents=true&timeZone=Asia%2FTokyo&timeMin=#{CGI.escape(Time.now.iso8601)}&key=#{apikey}"
 	  
 	  if !request.body.read.blank?
 	      
-          p JSON.parse(open(uri).read)
-  	  
+	      puts(googleテスト2)
+          puts(JSON.parse(open(uri).read))
+  	      
 	      #ヘッダ取得
 	      #header1 = response.headers
 		  #puts("ヘッダ");
@@ -38,6 +38,7 @@ class WelcomeController < ApplicationController
 		  
 	  else
 	  	  render
+	  	  puts(googleテスト1)
 	  end
 	  
   end
