@@ -9,13 +9,13 @@ class WelcomeController < ApplicationController
   
   apikey = 'AIzaSyANPVaEQ0I4erpjEzzcJFMHG8-EcABMoao'
   calendarId = 'kke.co.jp_jh10o5p06igc6toeq8rerrbde8@group.calendar.google.com'
-  uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events?orderBy=startTime&singleEvents=true&timeZone=Asia%2FTokyo&timeMin=#{CGI.escape(Time.now.iso8601)}&key=#{apikey}"
   
   # GET /welcome
   def index
   	  
 	  if !request.body.read.blank?
 	      
+	      uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events?orderBy=startTime&singleEvents=true&timeZone=Asia%2FTokyo&timeMin=#{CGI.escape(Time.now.iso8601)}&key=#{apikey}"
 	      puts('googleテスト2')
           puts(JSON.parse(open(uri).read))
   	      
