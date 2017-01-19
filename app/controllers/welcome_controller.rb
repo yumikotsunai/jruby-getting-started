@@ -16,7 +16,7 @@ class WelcomeController < ApplicationController
   	  
 	  if !request.body.read.blank?
 	      
-	      puts(googleテスト2)
+	      puts('googleテスト2')
           #puts(JSON.parse(open(uri).read))
   	      
 	      #ヘッダ取得
@@ -36,7 +36,7 @@ class WelcomeController < ApplicationController
 		  #puts('イベント : ' + e);
 		  
 	  else
-	  	  #puts(googleテスト1)
+	  	  puts('googleテスト1')
 	  	  render
 	  	  
 	  end
