@@ -36,8 +36,9 @@ class WelcomeController < ApplicationController
 		  #puts('イベント : ' + e);
 		  
 	  else
-	  	  render
 	  	  puts(googleテスト1)
+	  	  render
+	  	  
 	  end
 	  
   end
