@@ -1,3 +1,5 @@
+require 'open-uri'
+require 'cgi'
 require 'json'
 
 class WelcomeController < ApplicationController
@@ -8,111 +10,35 @@ class WelcomeController < ApplicationController
   
   # GET /welcome
   def index
-  	  # 読み込み時に一度パースが必要
-	  #json_request = JSON.parse(request.body.read)
+  	  
+  	  apikey = 'AIzaSyANPVaEQ0I4erpjEzzcJFMHG8-EcABMoao'
+  	  calendarId = 'kke.co.jp_jh10o5p06igc6toeq8rerrbde8@group.calendar.google.com'
+  	  
+  	  uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events?orderBy=startTime&singleEvents=true&timeZone=Asia%2FTokyo&timeMin=#{CGI.escape(Time.now.iso8601)}&key=#{apikey}"
 	  
 	  if !request.body.read.blank?
 	      
+          p JSON.parse(open(uri).read)
+  	  
 	      #ヘッダ取得
-	      header1 = response.headers
-	      header2 = response.headers['Content-Type']
-	      header3 = response.headers['X-Secret']
-	      header4 = response.headers['X-Content-Type-Options']
-	      header5 = response.headers['Content-Type'].inspect
-	      header6 = response.headers['X-Secret'].inspect
-	      header7 = response.headers['X-Content-Type-Options'].inspect
-	      header8 = response.headers.inspect
-	      
-	      #JSONのオリジナル取得
-	      #json_request = response.headers['raw_post']
-	      json_request2 = request.raw_post
-	      json_request3 = response.headers['raw_post']
-	      
-	      #FORMのオリジナル取得
-	      #form_request = response.raw_post
-	      #form_request2 = request.raw_post
-	      
-		  puts("ヘッダ");
-		  puts(header1);
-		  puts(header2);
-		  puts(header3);
-		  puts(header4);
-		  puts(header5);
-		  puts(header6);
-		  puts(header7);
-		  puts(header8);
+	      #header1 = response.headers
+		  #puts("ヘッダ");
+		  #puts(header1);
 		  
-		  puts("エラー");
-		  raise response.headers['X-Secret'].inspect
-		  raise response.headers.inspect
-		  
-		  puts("JSONオリジナル");
-		  #puts(json_request);
-		  puts(json_request2);
-		  puts(json_request3);
-		  #puts("FORMオリジナル");
-		  #puts(form_request);
-	      #puts(form_request2);
-	      
 	      #Parameters取得
-		  data = request["data"];
 		  #data = request[:data];
-		  type = data["type"];
-		  #type = data[:type];
-		  
-		  #attributes = data["attributes"];
-		  #source = attributes["source"];
-		  #status = attributes["status"];
-		  #time_zone = attributes["time_zone"];
-		  #occurred_at = attributes["occurred_at"];
-		  #created_at = attributes["created_at"];
-		  #updated_at = attributes["updated_at"];
-		  #nmethod = attributes["method"];
-		  #publisher_id = attributes["publisher_id"];
-		  #publisher_type = attributes["publisher_type"];
-		  #source = attributes["source"];
-		  
-		  #nid = data["id"];
-		  
-		  #links = data["links"];
-		  #nself = links["self"];
-		  #publisher = links["publisher"];
-		  
-		  
-		  #puts(data);
-		  #puts(type);
-		  #puts(attributes);
-		  #puts(source);
-		  #puts(status);
-		  #puts(time_zone);
-		  #puts(occurred_at);
-		  #puts(created_at);
-		  #puts(updated_at);
-		  #puts(nmethod);
-		  #puts(publisher_id);
-		  #puts(publisher_type);
-		  #puts(source);
-		  #puts(nid);
-		  #puts(links);
-		  #puts(nself);
-		  #puts(publisher);
-		  
-		  if type == "locked_event"
-		  	  e = "ロック"
-		  else
-		  	  e = "その他"
-		  end
+		  #type = data["type"];
+		  #if type == "locked_event"
+		  #	  e = "ロック"
+		  #else
+		  #	  e = "その他"
+		  #end
 		  
 		  #puts('イベント : ' + e);
 		  
-		  
 	  else
-	  	  #@event = 'イベント : '
-	  	  #render :text => 'イベント : ' 
 	  	  render
-	  	  
 	  end
-	  
 	  
   end
 
