@@ -21,11 +21,8 @@ class WelcomeController < ApplicationController
 	  if !open(uri).read.blank?
 	      
 	      puts('googleテスト2')
-	      puts(open(uri).read)
-	      
-	      #uri = "https://www.googleapis.com/calendar/v3/calendars/watch
-	      
-          #puts(JSON.parse(open(uri).read))
+	      #puts(open(uri).read)
+          puts(JSON.parse(open(uri).read))
   	      
 	      #ヘッダ取得
 	      #header1 = response.headers
