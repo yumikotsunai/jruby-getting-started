@@ -22,10 +22,11 @@ class WelcomeController < ApplicationController
 	      
 	      puts('googleテスト2')
 	      #puts(open(uri).read)
-	      json_request = JSON.parse(open(uri).read)
-	      event_id = json_request["id"]
+	      puts(JSON.parse(open(uri).read))
+	      #json_request = JSON.parse(open(uri).read)
+	      #event_id = json_request["id"]
 	      
-          puts(json_request))
+          #puts(json_request))
   	      #puts(event_id)
   	      
   	      
