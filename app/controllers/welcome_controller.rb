@@ -21,6 +21,7 @@ class WelcomeController < ApplicationController
 	  if !open(uri).read.blank?
 	      
 	      puts('googleテスト2')
+	      puts(open(uri).read)
 	      
 	      #uri = "https://www.googleapis.com/calendar/v3/calendars/watch
 	      
