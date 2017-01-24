@@ -17,21 +17,16 @@ class WelcomeController < ApplicationController
 	  calendarId = 'i8a77r26f9pu967g3pqpubv0ng@group.calendar.google.com'
 	  #uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events?orderBy=startTime&singleEvents=true&timeZone=Asia%2FTokyo&timeMin=#{CGI.escape(Time.now.iso8601)}&key=#{apikey}"
 	  uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events/watch?key=#{apikey}"
+	  puts(uri)
+	  
 	  
 	  #if !request.body.read.blank?
-	  if !open(uri).read.blank?
+	  #if !open(uri).read.blank?
 	      
-	      puts('googleテスト2')
+	      #puts('googleテスト2')
 	      #puts(open(uri).read)
-	      puts(JSON.parse(open(uri).read))
-	      #json_request = JSON.parse(open(uri).read)
-	      #event_id = json_request["id"]
+	      #puts(JSON.parse(open(uri).read))
 	      
-          #puts(json_request))
-  	      #puts(event_id)
-  	      
-  	      
-  	      
 	      #ヘッダ取得
 	      #header1 = response.headers
 		  #puts("ヘッダ");
@@ -40,19 +35,11 @@ class WelcomeController < ApplicationController
 	      #Parameters取得
 		  #data = request[:data];
 		  #type = data["type"];
-		  #if type == "locked_event"
-		  #	  e = "ロック"
-		  #else
-		  #	  e = "その他"
-		  #end
 		  
-		  #puts('イベント : ' + e);
-		  
-	  else
-	  	  puts('googleテスト1')
-	  	  render
-	  	  
-	  end
+	  #else
+	  	  #puts('googleテスト1')
+	  	  #render
+	  #end
 	  
   end
 
