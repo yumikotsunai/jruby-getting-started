@@ -15,6 +15,9 @@ class WelcomeController < ApplicationController
       ctx      = OpenSSL::SSL::SSLContext.new
       ctx.verify_mode = OpenSSL::SSL::VERIFY_NONE
       
+      puts('テスト')
+      
+      
       #postするデータを作成しておく
       postbody = {
 	      "id": "abc",
@@ -47,7 +50,7 @@ class WelcomeController < ApplicationController
 	  #	}
 	  #)
   	  
-  	  #render
+  	  render
   	  
 	  #uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events?orderBy=startTime&singleEvents=true&timeZone=Asia%2FTokyo&timeMin=#{CGI.escape(Time.now.iso8601)}&key=#{apikey}"
 	  #uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events/watch?key=#{apikey}"
