@@ -23,7 +23,7 @@ class WelcomeController < ApplicationController
 	  	api_method: service.events.watch,
 		parameters: { calendarId: 'i8a77r26f9pu967g3pqpubv0ng@group.calendar.google.com' },
 		body_object: {
-			id: SecureRandom.uuid(),
+			id: 'abc',
 		    type: 'web_hook',
 		    address: 'https://whispering-harbor-83926.herokuapp.com/'
 		}
