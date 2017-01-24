@@ -19,6 +19,15 @@ class WelcomeController < ApplicationController
 	  uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events/watch?key=#{apikey}"
 	  puts(uri)
 	  
+	  begin
+		  open(uri) { 
+		  puts(open(uri).read)
+	  }
+	  rescue => e
+	  	puts e # 例外メッセージ表示
+	  	render
+	  end
+	  
 	  
 	  #if !request.body.read.blank?
 	  #if !open(uri).read.blank?
