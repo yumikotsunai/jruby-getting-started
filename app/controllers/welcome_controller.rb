@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'cgi'
 require 'json'
-#require 'google/api_client'
+require 'google/api_client'
 
 class WelcomeController < ApplicationController
   
@@ -11,22 +11,37 @@ class WelcomeController < ApplicationController
   # GET /welcome
   def index
   	  
-	  #apikey = 'AIzaSyANPVaEQ0I4erpjEzzcJFMHG8-EcABMoao'
-	  apikey = 'AIzaSyAC-jdWZDppBm8_cP1LRA79QeChfgPr9Qs'
-	  #calendarId = 'kke.co.jp_jh10o5p06igc6toeq8rerrbde8@group.calendar.google.com'
-	  calendarId = 'i8a77r26f9pu967g3pqpubv0ng@group.calendar.google.com'
-	  #uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events?orderBy=startTime&singleEvents=true&timeZone=Asia%2FTokyo&timeMin=#{CGI.escape(Time.now.iso8601)}&key=#{apikey}"
-	  uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events/watch?key=#{apikey}"
-	  puts(uri)
+  	  client = Google::APIClient.new
+	  client.authorization.client_id = '841258018012-jqn06q4ifmfvbj5ip42rvtemetcga7oj.apps.googleusercontent.com'
+	  client.authorization.client_secret = 'HuQ43i5_NiqOeOIZca4oJttJ'
+	  client.authorization.refresh_token = '1/6qgSaD7fG01LXbnoptNfQCGi4XbfhQs1eScPhDnOEJg'
+	  client.authorization.fetch_access_token!
 	  
-	  begin
-		  open(uri) { 
-		  puts(open(uri).read)
-	  }
-	  rescue => e
-	  	puts e # 例外メッセージ表示
-	  	render
-	  end
+	  service = client.discovered_api('calendar', 'v3')
+	  
+	  client.execute!(
+	  	api_method: service.events.watch,
+		parameters: { calendarId: 'i8a77r26f9pu967g3pqpubv0ng@group.calendar.google.com' },
+		body_object: {
+			id: SecureRandom.uuid(),
+		    type: 'web_hook',
+		    address: 'https://whispering-harbor-83926.herokuapp.com/'
+		}
+	  )
+  	  
+  	  
+	  #uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events?orderBy=startTime&singleEvents=true&timeZone=Asia%2FTokyo&timeMin=#{CGI.escape(Time.now.iso8601)}&key=#{apikey}"
+	  #uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events/watch?key=#{apikey}"
+	  #puts(uri)
+	  
+	  #begin
+	  #	  open(uri) { 
+	  #	  puts(open(uri).read)
+	  #}
+	  #rescue => e
+	  #	puts e # 例外メッセージ表示
+	  #	render
+	  #end
 	  
 	  
 	  #if !request.body.read.blank?
