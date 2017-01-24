@@ -12,8 +12,8 @@ class WelcomeController < ApplicationController
   # GET /welcome
   def index
   	  #必要なのがhttpsなのでSSLを有効にする。とりあえず証明書は無視。
-      ctx      = OpenSSL::SSL::SSLContext.new
-      ctx.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      #ctx      = OpenSSL::SSL::SSLContext.new
+      #ctx.verify_mode = OpenSSL::SSL::VERIFY_NONE
       
       puts('テスト')
       
