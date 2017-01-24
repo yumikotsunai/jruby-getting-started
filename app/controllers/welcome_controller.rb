@@ -2,7 +2,7 @@ require 'open-uri'
 require 'cgi'
 require 'json'
 require 'google/api_client'
-require 'http'
+#require 'http'
 
 class WelcomeController < ApplicationController
   
