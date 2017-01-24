@@ -21,14 +21,15 @@ class WelcomeController < ApplicationController
 	  
 	  client.execute!(
 	  	api_method: service.events.watch,
-		parameters: { calendarId: 'i8a77r26f9pu967g3pqpubv0ng@group.calendar.google.com' },
-		body_object: {
-			id: 'abc',
-		    type: 'web_hook',
-		    address: 'https://whispering-harbor-83926.herokuapp.com/'
-		}
+	  	parameters: { calendarId: 'i8a77r26f9pu967g3pqpubv0ng@group.calendar.google.com' },
+	  	body_object: {
+	  		id: 'abc',
+	  	    type: 'web_hook',
+	  	    address: 'https://whispering-harbor-83926.herokuapp.com/'
+	  	}
 	  )
   	  
+  	  render
   	  
 	  #uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events?orderBy=startTime&singleEvents=true&timeZone=Asia%2FTokyo&timeMin=#{CGI.escape(Time.now.iso8601)}&key=#{apikey}"
 	  #uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events/watch?key=#{apikey}"
