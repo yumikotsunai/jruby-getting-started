@@ -36,7 +36,8 @@ class WelcomeController < ApplicationController
 	  #	puts "name=#{name}, val=#{val}"
 	　#end
   	  puts('ヘッダ3')
-  	  puts(res.headers.inspect)
+  	  #puts(res.headers.inspect)
+  	  logger.debug(res.headers)
   	  
   	  #client = Google::APIClient.new
 	  #client.authorization.client_id = '841258018012-jqn06q4ifmfvbj5ip42rvtemetcga7oj.apps.googleusercontent.com'
