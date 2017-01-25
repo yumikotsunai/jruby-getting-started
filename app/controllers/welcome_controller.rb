@@ -26,10 +26,10 @@ class WelcomeController < ApplicationController
       
       #ヘッダーに認証用の情報をつけておく
       #HTTP.post(URL)でURLにpostリクエストを送る（送ってresにレスポンスを取得。）
-      HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlveA9ntlps5NT_32Y0YVlY3vh_or1fDyjsOXnj2aI4X47we_VXEOcCL42mD-UrkoNMeC8-V37ZQM0Gles9PXCSAsK-MEQYH1UGPiprV9_38dXz5TPrAMV--8w1t")
+      res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlveA_5MVpHfCLSCGml94Apd6jgdbpkC1bIRgn7qa5ainwjn5Ur737XT_Rn5b1v6agVfmAZMMSJbksmC1EH3mAYXyMCDFs4WyWST2EnpuSfejULHwU3XmUPVEVMH")
       .post("https://www.googleapis.com/calendar/v3/calendars/yumikokke@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
       
-  	  #puts(res)
+  	  puts(res.headers)
   	  
   	  
   	  

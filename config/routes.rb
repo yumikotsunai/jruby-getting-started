@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   root 'welcome#index'
   #root 'welcome#google61e994262af709ed.html'
   
-  get 'welcome/google61e994262af709ed.html' => 'welcome#google61e994262af709ed.html'
-
   post "/" => "welcome#index"
 
   # Example of regular route:
