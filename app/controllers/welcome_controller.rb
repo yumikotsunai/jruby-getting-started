@@ -19,8 +19,10 @@ class WelcomeController < ApplicationController
       
       
       #postするデータを作成しておく
+      channelId = SecureRandom.uuid()
+      
       postbody = {
-	      "id": "abc",
+	      "id": channelId,
 	      "type": "web_hook",
 	      "address": "https://whispering-harbor-83926.herokuapp.com/",
       }
