@@ -26,18 +26,14 @@ class WelcomeController < ApplicationController
       
       #ヘッダーに認証用の情報をつけておく
       #HTTP.post(URL)でURLにpostリクエストを送る（送ってresにレスポンスを取得。）
-      res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlveA_5MVpHfCLSCGml94Apd6jgdbpkC1bIRgn7qa5ainwjn5Ur737XT_Rn5b1v6agVfmAZMMSJbksmC1EH3mAYXyMCDFs4WyWST2EnpuSfejULHwU3XmUPVEVMH")
+      res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlveA6qMapRUjgSrnsiXDfCeHB0xmf6B63QLa_86c_rSXuwaoKi3BEgguYNEwWOU0AyNteEzDTSQ4nvkSXl5fhMJ9z0RgJDFKPufU928WAPk-wagNFNHLeCSad2o")
       .post("https://www.googleapis.com/calendar/v3/calendars/yumikokke@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
       
       puts('レス')
   	  puts(res)
-  	  #puts('ヘッダ2')
-  	  #res.each_header do |name, val|
-	  #	puts "name=#{name}, val=#{val}"
-	　#end
-  	  puts('レス1')
+  	  puts('レス2')
   	  #puts(res.headers.inspect)
-  	  Rails.logger.debug(res)
+  	  #Rails.logger.debug(res)
   	  
   	  #client = Google::APIClient.new
 	  #client.authorization.client_id = '841258018012-jqn06q4ifmfvbj5ip42rvtemetcga7oj.apps.googleusercontent.com'
