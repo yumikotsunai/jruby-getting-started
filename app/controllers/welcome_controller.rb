@@ -36,12 +36,12 @@ class WelcomeController < ApplicationController
   	  client = Google::APIClient.new
 	  client.authorization.client_id = '841258018012-jqn06q4ifmfvbj5ip42rvtemetcga7oj.apps.googleusercontent.com'
 	  client.authorization.client_secret = 'HuQ43i5_NiqOeOIZca4oJttJ'
-	  client.authorization.refresh_token = '1/h2Ao4qbicoSkc7V9rgHlvlgzd7qkBxuBbWdbSfKAVvs'
+	  client.authorization.refresh_token = '1/CNwdoLxpM3tpj8Qhdg4o5ySy2F8oOkiTtxvPPez89Po'
 	  client.authorization.fetch_access_token!
 	  
 	  service = client.discovered_api('calendar', 'v3')
 	  
-	  res = client.execute!(
+	  client.execute!(
 	  	api_method: service.events.watch,
 	  	parameters: { calendarId: 'i8a77r26f9pu967g3pqpubv0ng@group.calendar.google.com' },
 	  	body_object: {
@@ -51,7 +51,7 @@ class WelcomeController < ApplicationController
 	  	}
 	  )
 	  
-	  puts(res)
+	  #puts(res)
   	  
   	  #render
   	  
