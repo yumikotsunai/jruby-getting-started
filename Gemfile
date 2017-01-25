@@ -40,3 +40,7 @@ gem 'puma'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+#tsunai add
+gem 'http'
+gem 'google-api-client'

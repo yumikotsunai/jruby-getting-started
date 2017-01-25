@@ -32,7 +32,13 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
     arel (5.0.1.20140414130214)
+    autoparse (0.3.3)
+      addressable (>= 2.3.1)
+      extlib (>= 0.9.15)
+      multi_json (>= 1.0.0)
     builder (3.2.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -41,9 +47,35 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    domain_name (0.5.20161129)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.2.2)
+    extlib (0.9.16)
+    faraday (0.11.0)
+      multipart-post (>= 1.2, < 3)
+    ffi (1.9.17-java)
+    google-api-client (0.8.2)
+      activesupport (>= 3.2)
+      addressable (~> 2.3)
+      autoparse (~> 0.3)
+      extlib (~> 0.9)
+      faraday (~> 0.9)
+      launchy (~> 2.4)
+      multi_json (~> 1.10)
+      retriable (~> 1.4)
+      signet (~> 0.6)
     hike (1.2.3)
+    http (2.1.0)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 1.0.1)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
+    http-form_data (1.0.1)
+    http_parser.rb (0.6.0)
+    http_parser.rb (0.6.0-java)
     i18n (0.6.11)
     jbuilder (2.2.5)
       activesupport (>= 3.0.0, < 5)
@@ -54,11 +86,19 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.1)
     json (1.8.1-java)
+    jwt (1.5.6)
+    launchy (2.4.3)
+      addressable (~> 2.3)
+    launchy (2.4.3-java)
+      addressable (~> 2.3)
+      spoon (~> 0.0.1)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
     minitest (5.4.3)
     multi_json (1.10.1)
+    multipart-post (2.0.0)
+    public_suffix (2.0.5)
     puma (2.9.1)
       rack (>= 1.1, < 2.0)
     puma (2.9.1-java)
@@ -89,6 +129,7 @@ GEM
     rake (10.4.0)
     rdoc (4.1.2)
       json (~> 1.4)
+    retriable (1.4.1)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -98,6 +139,13 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    signet (0.7.3)
+      addressable (~> 2.3)
+      faraday (~> 0.9)
+      jwt (~> 1.5)
+      multi_json (~> 1.10)
+    spoon (0.0.6)
+      ffi
     spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -121,6 +169,10 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf (0.1.4-java)
+    unf_ext (0.0.7.2)
 
 PLATFORMS
   java
@@ -129,6 +181,8 @@ PLATFORMS
 DEPENDENCIES
   activerecord-jdbcpostgresql-adapter
   coffee-rails (~> 4.0.0)
+  google-api-client
+  http
   jbuilder (~> 2.0)
   jquery-rails
   puma
@@ -140,3 +194,9 @@ DEPENDENCIES
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
+
+RUBY VERSION
+   ruby 2.3.1p0 (jruby 9.1.5.0)
+
+BUNDLED WITH
+   1.13.7
