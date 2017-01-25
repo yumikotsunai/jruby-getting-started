@@ -35,7 +35,7 @@ class WelcomeController < ApplicationController
   	  #res.each_header do |name, val|
 	  #	puts "name=#{name}, val=#{val}"
 	　#end
-  	  puts('レス2')
+  	  puts('レス1')
   	  #puts(res.headers.inspect)
   	  Rails.logger.debug(res)
   	  
