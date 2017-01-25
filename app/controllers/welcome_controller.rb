@@ -29,6 +29,7 @@ class WelcomeController < ApplicationController
       res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlveA_5MVpHfCLSCGml94Apd6jgdbpkC1bIRgn7qa5ainwjn5Ur737XT_Rn5b1v6agVfmAZMMSJbksmC1EH3mAYXyMCDFs4WyWST2EnpuSfejULHwU3XmUPVEVMH")
       .post("https://www.googleapis.com/calendar/v3/calendars/yumikokke@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
       
+      puts('ヘッダ')
   	  puts(res.headers)
   	  
   	  
