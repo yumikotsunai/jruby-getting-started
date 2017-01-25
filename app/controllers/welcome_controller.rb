@@ -15,42 +15,43 @@ class WelcomeController < ApplicationController
       ctx      = OpenSSL::SSL::SSLContext.new
       ctx.verify_mode = OpenSSL::SSL::VERIFY_NONE
       
-      puts('テスト')
-      
-      
       #postするデータを作成しておく
       channelId = SecureRandom.uuid()
       
-      postbody = {
-	      "id": channelId,
-	      "type": "web_hook",
-	      "address": "https://whispering-harbor-83926.herokuapp.com/",
-      }
+      #postbody = {
+	  #    "id": channelId,
+	  #    "type": "web_hook",
+	  #    "address": "https://whispering-harbor-83926.herokuapp.com/",
+      #}
       
       #ヘッダーに認証用の情報をつけておく
       #HTTP.post(URL)でURLにpostリクエストを送る（送ってresにレスポンスを取得。）
-      res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlveAxOICYS3rJfArLM6KhxJH5FXi7U6RRM1Tf2uFq5dSORu5ZSzaZxfoJ1lPYzX-lxKZ0FqqqqfjbduNsYOTXAo5Wb4PTPYZXO8cs6Wo__ocZ5A5Ifc8IGYn2Rn")
-      .post("https://www.googleapis.com/calendar/v3/calendars/yumikokke@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
+      #res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlveAxOICYS3rJfArLM6KhxJH5FXi7U6RRM1Tf2uFq5dSORu5ZSzaZxfoJ1lPYzX-lxKZ0FqqqqfjbduNsYOTXAo5Wb4PTPYZXO8cs6Wo__ocZ5A5Ifc8IGYn2Rn")
+      #.post("https://www.googleapis.com/calendar/v3/calendars/yumikokke@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
       
-  	  puts(res)
+  	  #puts(res)
   	  
-  	  #client = Google::APIClient.new
-	  #client.authorization.client_id = '841258018012-jqn06q4ifmfvbj5ip42rvtemetcga7oj.apps.googleusercontent.com'
-	  #client.authorization.client_secret = 'HuQ43i5_NiqOeOIZca4oJttJ'
-	  #client.authorization.refresh_token = '1/6qgSaD7fG01LXbnoptNfQCGi4XbfhQs1eScPhDnOEJg'
-	  #client.authorization.fetch_access_token!
+  	  
+  	  
+  	  client = Google::APIClient.new
+	  client.authorization.client_id = '841258018012-jqn06q4ifmfvbj5ip42rvtemetcga7oj.apps.googleusercontent.com'
+	  client.authorization.client_secret = 'HuQ43i5_NiqOeOIZca4oJttJ'
+	  client.authorization.refresh_token = '1/7nJCwG-bQpw6UZKXexw3WPEsPbkbX4eAgFcpqP18uvo'
+	  client.authorization.fetch_access_token!
 	  
-	  #service = client.discovered_api('calendar', 'v3')
+	  service = client.discovered_api('calendar', 'v3')
 	  
-	  #client.execute!(
-	  #	api_method: service.events.watch,
-	  #	parameters: { calendarId: 'i8a77r26f9pu967g3pqpubv0ng@group.calendar.google.com' },
-	  #	body_object: {
-	  #		id: 'abc',
-	  #	    type: 'web_hook',
-	  #	    address: 'https://whispering-harbor-83926.herokuapp.com/'
-	  #	}
-	  #)
+	  res = client.execute!(
+	  	api_method: service.events.watch,
+	  	parameters: { calendarId: 'i8a77r26f9pu967g3pqpubv0ng@group.calendar.google.com' },
+	  	body_object: {
+	  		id: channelId,
+	  	    type: 'web_hook',
+	  	    address: 'https://whispering-harbor-83926.herokuapp.com/'
+	  	}
+	  )
+	  
+	  puts(res)
   	  
   	  #render
   	  
