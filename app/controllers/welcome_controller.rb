@@ -28,7 +28,7 @@ class WelcomeController < ApplicationController
       #ヘッダーに認証用の情報をつけておく
       #HTTP.post(URL)でURLにpostリクエストを送る（送ってresにレスポンスを取得。）
       res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlveA0odIvUrHaAmHTstoQg4jxlEZwiblS6nP-4kauZw0z-DRnAjclRRKZNJjTJ0xs35ovEAbdnTytie2joXnwSCs2KNtTNeZGnhc-IfhWMeB2xGGK1cj7tQrRrH")
-      .post("https://www.googleapis.com/calendar/v3/calendars/my_calendar@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
+      .post("https://www.googleapis.com/calendar/v3/calendars/yumikokke@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
       
   	  puts(res)
   	  
