@@ -12,10 +12,10 @@ class WelcomeController < ApplicationController
   # GET /welcome
   def index
   	  #必要なのがhttpsなのでSSLを有効にする。とりあえず証明書は無視。
-      #ctx      = OpenSSL::SSL::SSLContext.new
-      #ctx.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      ctx      = OpenSSL::SSL::SSLContext.new
+      ctx.verify_mode = OpenSSL::SSL::VERIFY_NONE
       
-      #puts('テスト')
+      puts('テスト')
       
       
       #postするデータを作成しておく
@@ -27,10 +27,10 @@ class WelcomeController < ApplicationController
       
       #ヘッダーに認証用の情報をつけておく
       #HTTP.post(URL)でURLにpostリクエストを送る（送ってresにレスポンスを取得。）
-      #res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer 1/6qgSaD7fG01LXbnoptNfQCGi4XbfhQs1eScPhDnOEJg")
-      #.post("https://www.googleapis.com/calendar/v3/calendars/my_calendar@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
+      res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer 1/6qgSaD7fG01LXbnoptNfQCGi4XbfhQs1eScPhDnOEJg")
+      .post("https://www.googleapis.com/calendar/v3/calendars/my_calendar@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
       
-  	  #puts(res)
+  	  puts(res)
   	  
   	  #client = Google::APIClient.new
 	  #client.authorization.client_id = '841258018012-jqn06q4ifmfvbj5ip42rvtemetcga7oj.apps.googleusercontent.com'
