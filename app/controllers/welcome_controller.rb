@@ -29,15 +29,15 @@ class WelcomeController < ApplicationController
       res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlveA_5MVpHfCLSCGml94Apd6jgdbpkC1bIRgn7qa5ainwjn5Ur737XT_Rn5b1v6agVfmAZMMSJbksmC1EH3mAYXyMCDFs4WyWST2EnpuSfejULHwU3XmUPVEVMH")
       .post("https://www.googleapis.com/calendar/v3/calendars/yumikokke@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
       
-      puts('ヘッダ')
-  	  puts(res.headers)
+      puts('レス')
+  	  puts(res)
   	  #puts('ヘッダ2')
   	  #res.each_header do |name, val|
 	  #	puts "name=#{name}, val=#{val}"
 	　#end
-  	  puts('ヘッダ3')
+  	  puts('レス2')
   	  #puts(res.headers.inspect)
-  	  Rails.logger.debug(res.headers)
+  	  Rails.logger.debug(res)
   	  
   	  #client = Google::APIClient.new
 	  #client.authorization.client_id = '841258018012-jqn06q4ifmfvbj5ip42rvtemetcga7oj.apps.googleusercontent.com'
