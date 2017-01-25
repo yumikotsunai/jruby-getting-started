@@ -18,38 +18,38 @@ class WelcomeController < ApplicationController
       #postするデータを作成しておく
       channelId = SecureRandom.uuid()
       
-      #postbody = {
-	  #    "id": channelId,
-	  #    "type": "web_hook",
-	  #    "address": "https://whispering-harbor-83926.herokuapp.com/",
-      #}
+      postbody = {
+	      "id": channelId,
+	      "type": "web_hook",
+	      "address": "https://whispering-harbor-83926.herokuapp.com/",
+      }
       
       #ヘッダーに認証用の情報をつけておく
       #HTTP.post(URL)でURLにpostリクエストを送る（送ってresにレスポンスを取得。）
-      #res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlveAxOICYS3rJfArLM6KhxJH5FXi7U6RRM1Tf2uFq5dSORu5ZSzaZxfoJ1lPYzX-lxKZ0FqqqqfjbduNsYOTXAo5Wb4PTPYZXO8cs6Wo__ocZ5A5Ifc8IGYn2Rn")
-      #.post("https://www.googleapis.com/calendar/v3/calendars/yumikokke@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
+      HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlveA9ntlps5NT_32Y0YVlY3vh_or1fDyjsOXnj2aI4X47we_VXEOcCL42mD-UrkoNMeC8-V37ZQM0Gles9PXCSAsK-MEQYH1UGPiprV9_38dXz5TPrAMV--8w1t")
+      .post("https://www.googleapis.com/calendar/v3/calendars/yumikokke@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
       
   	  #puts(res)
   	  
   	  
   	  
-  	  client = Google::APIClient.new
-	  client.authorization.client_id = '841258018012-jqn06q4ifmfvbj5ip42rvtemetcga7oj.apps.googleusercontent.com'
-	  client.authorization.client_secret = 'HuQ43i5_NiqOeOIZca4oJttJ'
-	  client.authorization.refresh_token = '1/CNwdoLxpM3tpj8Qhdg4o5ySy2F8oOkiTtxvPPez89Po'
-	  client.authorization.fetch_access_token!
+  	  #client = Google::APIClient.new
+	  #client.authorization.client_id = '841258018012-jqn06q4ifmfvbj5ip42rvtemetcga7oj.apps.googleusercontent.com'
+	  #client.authorization.client_secret = 'HuQ43i5_NiqOeOIZca4oJttJ'
+	  #client.authorization.refresh_token = '1/CNwdoLxpM3tpj8Qhdg4o5ySy2F8oOkiTtxvPPez89Po'
+	  #client.authorization.fetch_access_token!
 	  
-	  service = client.discovered_api('calendar', 'v3')
+	  #service = client.discovered_api('calendar', 'v3')
 	  
-	  client.execute!(
-	  	api_method: service.events.watch,
-	  	parameters: { calendarId: 'i8a77r26f9pu967g3pqpubv0ng@group.calendar.google.com' },
-	  	body_object: {
-	  		id: channelId,
-	  	    type: 'web_hook',
-	  	    address: 'https://whispering-harbor-83926.herokuapp.com/'
-	  	}
-	  )
+	  #client.execute!(
+	  #	api_method: service.events.watch,
+	  #	parameters: { calendarId: 'i8a77r26f9pu967g3pqpubv0ng@group.calendar.google.com' },
+	  #	body_object: {
+	  #		id: channelId,
+	  #	    type: 'web_hook',
+	  #	    address: 'https://whispering-harbor-83926.herokuapp.com/'
+	  #	}
+	  #)
 	  
 	  #puts(res)
   	  
