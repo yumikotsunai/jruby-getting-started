@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   #root 'welcome#google61e994262af709ed.html'
   
   post "/" => "welcome#index"
+  post 'receive/webhook' => 'receive#webhook'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
