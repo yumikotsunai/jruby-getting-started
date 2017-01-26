@@ -21,12 +21,12 @@ class WelcomeController < ApplicationController
       postbody = {
 	      "id": channelId,
 	      "type": "web_hook",
-	      "address": "https://whispering-harbor-83926.herokuapp.com/",
+	      "address": "https://whispering-harbor-83926.herokuapp.com/receive/webhook/",
       }
       
       #ヘッダーに認証用の情報をつけておく
       #HTTP.post(URL)でURLにpostリクエストを送る（送ってresにレスポンスを取得。）
-      res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlvfA795m0OiGxfIepWc65GvAtDIwI06y-chtbIOert709DWvn2ewZ2Jsofz8ptyjWZ4_Q5WPetIYbnt--yVucPxhlJW1gMDXo3kIEv21qDVxauo5c6GSl0faRlz")
+      res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlvfAyiarn7v81rf3EVxk53qtgg8csOwDGotPy48Tm6xAvtt36XhX6vhYLh3D6un83yvdCWmZw9pTEHcUanA5BRwbpm_b23ny3KdKI0Q3qG2NQKkgau89lsvsmQK")
       .post("https://www.googleapis.com/calendar/v3/calendars/yumikokke@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
       
       puts('レス')
