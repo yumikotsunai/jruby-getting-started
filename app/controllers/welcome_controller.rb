@@ -12,26 +12,26 @@ class WelcomeController < ApplicationController
   # GET /welcome
   def index
   	  #必要なのがhttpsなのでSSLを有効にする。とりあえず証明書は無視。
-      ctx      = OpenSSL::SSL::SSLContext.new
-      ctx.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      #ctx      = OpenSSL::SSL::SSLContext.new
+      #ctx.verify_mode = OpenSSL::SSL::VERIFY_NONE
       
       #postするデータを作成しておく
-      channelId = SecureRandom.uuid()
+      #channelId = SecureRandom.uuid()
       
-      postbody = {
-	      "id": channelId,
-	      "type": "web_hook",
-	      "address": "https://whispering-harbor-83926.herokuapp.com/receive/webhook/",
-      }
+      #postbody = {
+	  #    "id": channelId,
+	  #    "type": "web_hook",
+	  #    "address": "https://whispering-harbor-83926.herokuapp.com/receive/webhook/",
+      #}
       
       #ヘッダーに認証用の情報をつけておく
       #HTTP.post(URL)でURLにpostリクエストを送る（送ってresにレスポンスを取得。）
-      res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlvfAyiarn7v81rf3EVxk53qtgg8csOwDGotPy48Tm6xAvtt36XhX6vhYLh3D6un83yvdCWmZw9pTEHcUanA5BRwbpm_b23ny3KdKI0Q3qG2NQKkgau89lsvsmQK")
-      .post("https://www.googleapis.com/calendar/v3/calendars/yumikokke@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
+      #res = HTTP.headers("Content-Type" => "application/json",:Authorization => "Bearer ya29.GlvfAyiarn7v81rf3EVxk53qtgg8csOwDGotPy48Tm6xAvtt36XhX6vhYLh3D6un83yvdCWmZw9pTEHcUanA5BRwbpm_b23ny3KdKI0Q3qG2NQKkgau89lsvsmQK")
+      #.post("https://www.googleapis.com/calendar/v3/calendars/yumikokke@gmail.com/events/watch", :ssl_context => ctx , :body => postbody.to_json)
       
-      puts('レス')
-  	  puts(res)
-  	  puts('レス2')
+      #puts('レス')
+  	  #puts(res)
+  	  #puts('レス2')
   	  #puts(res.headers.inspect)
   	  #Rails.logger.debug(res)
   	  
