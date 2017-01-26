@@ -7,12 +7,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   root 'welcome#index'
-  #root 'welcome#google61e994262af709ed.html'
   
   post "/" => "welcome#index"
   
   get 'receive/webhook'
-  post 'receive/webhook' => 'receive#webhookreceive'
+  post 'receive/webhook'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,7 +1,7 @@
 
 class ReceiveController < ApplicationController
   
-  # GET /welcome
+  # GET/POST /webhook
   def webhook
   	  
   end
