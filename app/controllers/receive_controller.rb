@@ -6,7 +6,7 @@ class ReceiveController < ApplicationController
   end
   
   def webhookreceive
-  	  @something = params[:abc]
+  	  #@something = params[:abc]
   end
   
 end
