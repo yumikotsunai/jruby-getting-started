@@ -35,25 +35,26 @@ class WelcomeController < ApplicationController
   	  #puts(res.headers.inspect)
   	  #Rails.logger.debug(res)
   	  
-  	  #client = Google::APIClient.new
-	  #client.authorization.client_id = '841258018012-jqn06q4ifmfvbj5ip42rvtemetcga7oj.apps.googleusercontent.com'
-	  #client.authorization.client_secret = 'HuQ43i5_NiqOeOIZca4oJttJ'
-	  #client.authorization.refresh_token = '1/CNwdoLxpM3tpj8Qhdg4o5ySy2F8oOkiTtxvPPez89Po'
-	  #client.authorization.fetch_access_token!
+  	  client = Google::APIClient.new
+	  client.authorization.client_id = '841258018012-jqn06q4ifmfvbj5ip42rvtemetcga7oj.apps.googleusercontent.com'
+	  client.authorization.client_secret = 'HuQ43i5_NiqOeOIZca4oJttJ'
+	  client.authorization.refresh_token = '1/SfFhHTRZ_Y4kvknYix1_qiIbFf5pyvSPcWLtlIIwrRA'
+	  client.authorization.fetch_access_token!
 	  
-	  #service = client.discovered_api('calendar', 'v3')
+	  service = client.discovered_api('calendar', 'v3')
 	  
-	  #client.execute!(
-	  #	api_method: service.events.watch,
-	  #	parameters: { calendarId: 'i8a77r26f9pu967g3pqpubv0ng@group.calendar.google.com' },
-	  #	body_object: {
-	  #		id: channelId,
-	  #	    type: 'web_hook',
-	  #	    address: 'https://whispering-harbor-83926.herokuapp.com/'
-	  #	}
-	  #)
+	  client.execute!(
+	  	api_method: service.events.watch,
+	  	parameters: { calendarId: 'i8a77r26f9pu967g3pqpubv0ng@group.calendar.google.com' },
+	  	body_object: {
+	  		id: channelId,
+	  	    type: 'web_hook',
+	  	    address: 'https://whispering-harbor-83926.herokuapp.com/receive/webhook/'
+	  	}
+	  )
 	  
-	  #puts(res)
+	  puts('レス')
+	  puts(res)
   	  
   	  #render
   	  
