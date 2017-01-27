@@ -16,7 +16,7 @@ class WelcomeController < ApplicationController
       #ctx.verify_mode = OpenSSL::SSL::VERIFY_NONE
       
       #postするデータを作成しておく
-      #channelId = SecureRandom.uuid()
+      channelId = SecureRandom.uuid()
       
       #postbody = {
 	  #    "id": channelId,
