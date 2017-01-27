@@ -8,10 +8,10 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   
-  post "/" => "welcome#index"
+  get "/" => "welcome#index"
   
-  get 'receive/webhook'
-  post 'receive/webhook' => "receive#webhookreceive"
+  post 'receive/webhook'
+  #post 'receive/webhook' => "receive#webhookreceive"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
