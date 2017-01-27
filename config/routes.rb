@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get "/" => "welcome#index"
   
   get 'receive/webhook'
-  post 'receive/webhook'
-  #post 'receive/webhook' => "receive#webhookreceive"
+  #post 'receive/webhook'
+  post 'receive/webhook' => "receive#webhookreceive"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
