@@ -9,7 +9,6 @@ class WelcomeController < ApplicationController
   # この↓一文がないとCSRFチェックでこけるので、APIをやりとりしているControllerには必要
   skip_before_filter :verify_authenticity_token
   
-  # GET /welcome
   def index
   	  #必要なのがhttpsなのでSSLを有効にする。とりあえず証明書は無視。
       ctx      = OpenSSL::SSL::SSLContext.new
@@ -18,6 +17,7 @@ class WelcomeController < ApplicationController
       #postするデータを作成しておく
       channelId = SecureRandom.uuid()
       
+      #HTTPにPOSTリクエストを送る（方法1）
       postbody = {
 	      "id": channelId,
 	      "type": "web_hook",
@@ -31,10 +31,9 @@ class WelcomeController < ApplicationController
       
       puts('レス')
   	  puts(res)
-  	  puts('レス2')
-  	  #puts(res.headers.inspect)
-  	  #Rails.logger.debug(res)
   	  
+  	  
+  	  #HTTPにPOSTリクエストを送る（方法2）
   	  #client = Google::APIClient.new
 	  #client.authorization.client_id = '841258018012-jqn06q4ifmfvbj5ip42rvtemetcga7oj.apps.googleusercontent.com'
 	  #client.authorization.client_secret = 'HuQ43i5_NiqOeOIZca4oJttJ'
@@ -56,10 +55,10 @@ class WelcomeController < ApplicationController
 	  #puts('レス')
 	  #puts(res)
   	  
-  	  #render
   	  
+  	  
+  	  #以下は、イベント取得。おそらくputs(open(uri).read)で、登録されているイベント全てが取得されたはず
 	  #uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events?orderBy=startTime&singleEvents=true&timeZone=Asia%2FTokyo&timeMin=#{CGI.escape(Time.now.iso8601)}&key=#{apikey}"
-	  #uri = "https://www.googleapis.com/calendar/v3/calendars/#{CGI.escape(calendarId)}/events/watch?key=#{apikey}"
 	  #puts(uri)
 	  
 	  #begin
@@ -72,7 +71,7 @@ class WelcomeController < ApplicationController
 	  #end
 	  
 	  
-	  #if !request.body.read.blank?
+	  #以下は、上記に至る前のソース
 	  #if !open(uri).read.blank?
 	      
 	      #puts('googleテスト2')
@@ -83,10 +82,6 @@ class WelcomeController < ApplicationController
 	      #header1 = response.headers
 		  #puts("ヘッダ");
 		  #puts(header1);
-		  
-	      #Parameters取得
-		  #data = request[:data];
-		  #type = data["type"];
 		  
 	  #else
 	  	  #puts('googleテスト1')
